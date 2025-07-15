@@ -1,39 +1,26 @@
-//************************************************************************************************************//
-//*                                                                                                           //
-//*                             			     Klingelschild 1.6					                                        //
-//*                                     V1.5	Revision 06042014											  												//
-//*                                         für ATMEGA 48												  	  												//
-//*                                      c 2014 by Peter Lampe												  											//
-//*                                                                                                           //
-//************************************************************************************************************//
-
-
+//************************************************************************************************************
+//*                             			     Klingelschild 1.6					                                        
+//*                                         für ATmega48												  	  												
+//*                                      c 2014 by Peter Lampe												  											
+//*                             Umsetzung auf Visual Studio Code 15.07.2025                                                                //
+//************************************************************************************************************
 
 #include <stdlib.h>
 #include <avr/io.h>
 #include "lcd.h"
 #include "Switchtiming.h"
 
-
-#ifndef F_CPU																//wenn nicht schon im Makefile definiert,
-#define F_CPU 8000000UL											//dann F_CPU hier sauber definieren
+#ifndef F_CPU																
+#define F_CPU 8000000UL											
 #endif
-#define Baud_Rate 9600UL										//Baudrate f�r RS232 festlegen f�r eventuelles Hardware-Debugging
-
-
-
-
-//function prototypes
-void wait_until_key_pressed(void);
-
-
+#define Baud_Rate 9600UL										        //Baudrate UART für eventuelles Hardware-Debugging
 
 int main(void)
 {
   unsigned char i;
 
-  lcd_init(LCD_DISP_ON);									//LCD initialisieren
-  lcd_clrscr();														//Display löschen Curser home
+  lcd_init(LCD_DISP_ON);									          //LCD initialisieren
+  lcd_clrscr();														          //Display löschen Curser home
   while (1)
   {
                                                     //1.Seite anzeigen
@@ -46,11 +33,11 @@ int main(void)
       wait_ms (50);
     }
     wait_ms (5000);
-    for (i=0; i<16; i++)
+    /*for (i=0; i<16; i++)
     {
       lcd_command(LCD_MOVE_DISP_LEFT);
       wait_ms (50);
-    }
+    }*/
     lcd_clrscr();														        //Display löschen, Curser home
     
     lcd_puts("                *  Eva & Peter *\n");	//Text 1. Zeile
@@ -61,12 +48,12 @@ int main(void)
       lcd_command(LCD_MOVE_DISP_LEFT);
       wait_ms (50);
     }
-    wait_ms (5000);
-    for (i=0; i<16; i++)
+    wait_ms (10000);
+    /*for (i=0; i<16; i++)
     {
       lcd_command(LCD_MOVE_DISP_LEFT);
       wait_ms (50);
-    }
+    }*/
     lcd_clrscr();													          //Display löschen Corser home
   }
 }
