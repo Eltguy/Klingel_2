@@ -36,6 +36,9 @@ int main(void)
     _delay_ms(3000);                                //Anzeigedauer
     lcd_clrscr();														        //Display löschen, Curser home
     
+
+                                                    //2.Seite anzeigen
+    lcd_command(LCD_HOME);												  //Cursor home
     lcd_puts("                  Martha & Max  \n");	//Text 1. Zeile 
     lcd_puts("                   Mustermann ");		  //Text 2. Zeile
    
