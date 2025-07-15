@@ -18,16 +18,16 @@ void wait_ms (unsigned int ms)
 
 {
 unsigned int counter;								//Laufvariable, um 1ms zu erzeugen
-//return;											//nur zum Debuggen überspringen
- while(ms)											//1ms Zeitschleife, wird bei 0ms überbrückt
+//return;											//nur zum Debuggen ï¿½berspringen
+ while(ms)											//1ms Zeitschleife, wird bei 0ms ï¿½berbrï¿½ckt
     {
 		
 		
-		counter=8000000UL / 10000;						//Berechnung der Schleifenvariable für 1ms
+		counter=8000000UL / 10000;						//Berechnung der Schleifenvariable fï¿½r 1ms
             while(counter)
             {
-                asm volatile("nop");				//zur Verzögerung NOP-Befehl in Assembler einfügen
-                counter--;							//Schleifenzähler dekrementieren
+                asm volatile("nop");				//zur VerzÃ¶gerung NOP-Befehl in Assembler einfï¿½gen
+                counter--;							//SchleifenzÃ¤hler dekrementieren
             }
         ms--;										//ms-Schleife dekrementiern
     }
@@ -54,13 +54,13 @@ asm volatile("nop");
 
 
 //________________________________________________________________________________________________________________
-//Fragt Taste auf L-Signal ab. Bei gedrückter Taste wird die Entprellzeit abgewartet und 1 zurückgegeben
-//Ist Taste nicht gedrückt, dann sofort Rücksprung mit 0 als Rückgabe
+//Fragt Taste auf L-Signal ab. Bei gedrÃ¼ckter Taste wird die Entprellzeit abgewartet und 1 zurÃ¼ckgegeben
+//Ist Taste nicht gedrÃ¼ckt, dann sofort RÃ¼cksprung mit 0 als RÃ¼ckgabe
 
 unsigned char press_butten (unsigned char *p, unsigned char position, unsigned int entprellzeit)						
 
 {
-if (!(*p & (1<<position)))			//wenn Taste gedrückt
+if (!(*p & (1<<position)))			//wenn Taste gedrï¿½ckt
 	{
 	wait_ms(entprellzeit);
 	return 1;
