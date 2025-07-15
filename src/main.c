@@ -48,30 +48,3 @@ int main(void)
     lcd_clrscr();													          //Display löschen Corser home
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-void wait_until_key_pressed(void)
-{
-  unsigned char temp1, temp2;
-  unsigned int i;
-  
-  do {
-    temp1 = PINB;                  // read input
-    for(i=0;i<65535;i++);
-    temp2 = PINB;                  // read input
-    temp1 = (temp1 & temp2);       // debounce input
-  } while ( temp1 & _BV(PINB2) );
-  
-  loop_until_bit_is_set(PINB,PINB2);            /* wait until key is released */
-}
