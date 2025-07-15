@@ -1,0 +1,22 @@
+Systembeschreibung
+------------------
+Klingelschild, realisiert mit einem ATmega48 und einem HD44780 1602. Auf zwei Pages
+wird zunächst ein Willkommensgruß und nach einer gewissen Verzögerung der Name angezeigt.
+Die Schiftzeichen werden dabei jeweils von links nach rechts eingescrollt. Dieser Vorgang
+wird bis zur Abschaltung wiederholt. Die Betriebsspannung kann im Bereich 6...12VAC/DC
+variieren. Die Zu- bzw- Abschaltung erfolgt über ein PIR. Dessen Verzögerungszeit bestimmt
+letztendlich die Anzeigedauer im Display
+
+
+Versionskontrolle
+---------------------
+V1.6
+----
+Voll funktionsfähige Version, unter WinAVR bzw. AVR-Studio
+
+V1.7
+----
+Umsetzung auf Visual Studio Code mit PlatformIO.
+Codevereinfachung durch Verwendung der internen DELAY-Library. Damit Wegfall der Switchtiming-
+Bibliothek. Quelltext neu formatiert und auskommentiert.
+
