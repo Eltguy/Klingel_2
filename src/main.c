@@ -17,7 +17,7 @@
 #define Baud_Rate 9600UL										       //Baudrate UART für eventuelles Hardware-Debugging
 
 #define AutoHold 1                                 //AutoHold-Pin PC1
-#define ONTIME 30                                  //Nachlaufzeit [s]
+#define ONTIME 60                                  //Nachlaufzeit [s]
                                                    //Betriebszeit Display = PIR-Laufzeit + ONTIME
 volatile int TimeDelay = ONTIME;                   //Nachlaufzähler, initialisiert
 //-------------------------------------------------------------------------------------------

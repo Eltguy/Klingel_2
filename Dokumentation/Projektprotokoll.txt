@@ -1,11 +1,12 @@
 Systembeschreibung
 ------------------
 Klingelschild, realisiert mit einem ATmega48 und einem HD44780 1602. Auf zwei Pages
-wird zunächst ein Willkommensgruß und nach einer gewissen Verzögerung der Name angezeigt.
+wird zunächst ein Willkommensgruß und nach einer gewissen Verzögerung, der Name angezeigt.
 Die Schiftzeichen werden dabei jeweils von links nach rechts eingescrollt. Dieser Vorgang
 wird bis zur Abschaltung wiederholt. Die Betriebsspannung kann im Bereich 6...12VAC/DC
-variieren. Die Zu- bzw- Abschaltung erfolgt über ein PIR. Dessen Verzögerungszeit bestimmt
-letztendlich die Anzeigedauer im Display
+variieren. Die Zu- bzw- Abschaltung erfolgt über ein PIR. Dessen Verzögerungszeit Plus eine
+im Quelltext festlegbare Nachlaufzeit bestimmen die Anzeigedauer im Display. Für Dauerbetrieb
+ist der Jumper JP1 zu setzen. Der PIR kann dann entfallen.
 
 
 Versionskontrolle
@@ -18,5 +19,6 @@ V1.7
 ----
 Umsetzung auf Visual Studio Code mit PlatformIO.
 Codevereinfachung durch Verwendung der internen DELAY-Library. Damit Wegfall der Switchtiming-
-Bibliothek. Quelltext neu formatiert und auskommentiert.
+Bibliothek. Nachlaufsteuerung mit Timer1-Interrupt hinzugefügt. Quelltext neu formatiert und 
+auskommentiert.
 
